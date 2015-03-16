@@ -6,27 +6,23 @@
 /*   By: fpoggi <fpoggi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/23 17:09:36 by fpoggi            #+#    #+#             */
-/*   Updated: 2015/03/10 22:28:19 by fpoggi           ###   ########.fr       */
+/*   Updated: 2015/03/16 12:00:01 by fpoggi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_strcmp(const char *s1, const char *s2)
 {
-	char	*str1;
-	char	*str2;
+	unsigned char	*ps1;
+	unsigned char	*ps2;
 
-	str1 = (char *)s1;
-	str2 = (char *)s2;
-	while ((*str1 != 0) && (*str2 != 0))
+	ps1 = (unsigned char *)s1;
+	ps2 = (unsigned char *)s2;
+	while (*ps1 || *ps2)
 	{
-		str1++;
-		str2++;
-		if (*str1 < *str2)
-			return (-1);
-		if (*str1 == *str2)
-			return (0);
-		else
-			return (1);
+		if (*ps1 != *ps2)
+			return (*ps1 - *ps2);
+		ps1++;
+		ps2++;
 	}
 	return (0);
 }

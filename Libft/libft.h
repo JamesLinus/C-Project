@@ -6,7 +6,7 @@
 /*   By: fpoggi <fpoggi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/05 22:34:09 by fpoggi            #+#    #+#             */
-/*   Updated: 2015/03/11 17:05:13 by fpoggi           ###   ########.fr       */
+/*   Updated: 2015/03/18 14:02:27 by fpoggi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,5 @@ int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
+int		ft_atoi(const char *str);
 #endif

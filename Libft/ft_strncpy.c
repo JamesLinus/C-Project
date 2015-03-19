@@ -6,7 +6,7 @@
 /*   By: fpoggi <fpoggi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/12 23:48:20 by fpoggi            #+#    #+#             */
-/*   Updated: 2015/02/23 16:56:56 by fpoggi           ###   ########.fr       */
+/*   Updated: 2015/03/18 15:36:39 by fpoggi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,10 @@
 
 char	*ft_strncpy(char *dst, const char *src, size_t n)
 {
-	size_t		i;
-
-	i = 0;
-	while (((dst[i] = src[i]) != '\0') && (i < n))
+	while ((*dst = *src) && (--n))
 	{
-		i++;
-		n--;
+		dst++;
+		src++;
 	}
 	return (dst);
 }

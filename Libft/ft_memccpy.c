@@ -1,30 +1,21 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: fpoggi <fpoggi@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/26 17:47:25 by fpoggi            #+#    #+#             */
-/*   Updated: 2015/03/10 17:58:38 by fpoggi           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+void        *ft_memccpy(void *s1, const void *s2, int c, size_t n)
 {
-	char			*d;
-	char			*s;
-	unsigned char	cr;
+	size_t		i;
+	char		*cs1;
+	const char	*cs2;
 
-	d = dst;
-	s = (char *)src;
-	cr = (unsigned char)c;
-	while (n--)
+	cs1 = (char*) s1;
+	cs2 = (char*) s2;
+	i = 0;
+	while (i < n)
 	{
-		if ((*d++ = *s++) == cr)
-			return (d);
+		cs1[i] = cs2[i];
+		if (cs2[i] == c)
+			return ((void*) &cs1[i + 1]);
+		i++;
 	}
 	return (NULL);
 }

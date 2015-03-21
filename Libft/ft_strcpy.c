@@ -1,23 +1,22 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: fpoggi <fpoggi@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/11 06:50:10 by fpoggi            #+#    #+#             */
-/*   Updated: 2015/03/16 11:57:54 by fpoggi           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #include "libft.h"
 
 char	*ft_strcpy(char *dst, const char *src)
 {
-	while ((*dst = *src))
-	{
-		dst++;
-		src++;
-	}
-	return (dst);
+	char    *tmp_dst;
+    char    *tmp_src;
+    int     i;
+
+	if (dst == NULL || src == NULL)
+		return (NULL);
+    tmp_dst = dst;
+    tmp_src = (char *)src;
+    i = 0;
+    while (tmp_src[i] != '\0')
+    {
+        tmp_dst[i] = tmp_src[i];
+        i++;
+    }
+    tmp_dst[i] = '\0';
+    return (dst);
 }

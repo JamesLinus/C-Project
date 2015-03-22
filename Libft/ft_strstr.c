@@ -1,31 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ysoto <ysoto@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2013/11/21 14:07:27 by ysoto             #+#    #+#             */
+/*   Updated: 2013/12/17 10:20:49 by ysoto            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strstr(const char *s1, const char *s2)
+char	*ft_strstr(const char *s1, const char *s2)
 {
-	int     s1_i;
-	int     s2_i;
-	int		pos;
+	size_t	l1;
+	size_t	l2;
 
-	if (s1 == NULL || s2 == NULL ||
-			(ft_strlen(s1) < ft_strlen(s2)))
-		return (NULL);
-	else if (s2[0] == '\0')
-		return ((char*)s1);
-	s1_i = 0;
-	while (s1[pos = s1_i] != '\0')
+	l2 = ft_strlen(s2);
+	if (!l2)
+		return (char *)s1;
+	l1 = ft_strlen(s1);
+	while (l1 >= l2)
 	{
-		s2_i = 0;
-		if (s2[s2_i] == s1[s1_i])
-		{
-			while (s2[s2_i++] == s1[s1_i++])
-			{
-				if (s1[s1_i] == '\0' || s2[s2_i] == '\0')
-					return ((char*)&s1[pos]);
-			}
-		}
-		else
-			s1_i++;
+		l1--;
+		if (!ft_memcmp(s1, s2, l2))
+			return (char *)s1;
+		s1++;
 	}
-	return (0);
+	return (NULL);
 }
